@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediPredict | Clinical Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="card">
+            <div class="header-section">
+                <h1 class="title">Clinical Assessment</h1>
+                <p class="subtitle">Diabetes Risk Prediction Model </p>
+            </div>
+
+            <form action="/predict" method="POST">
+                <div class="form-grid">
+
+                    <div class="input-group">
+                        <label>Patient Gender</label>
+                        <select name="gender" required>
+                            <option value="" disabled selected>Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Age (Years)</label>
+                        <input type="number" step="1" name="age" placeholder="e.g. 45" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Smoking History</label>
+                        <select name="smoking_history" required>
+                            <option value="never">Never</option>
+                            <option value="current">Current Smoker</option>
+                            <option value="former">Former Smoker</option>
+                            <option value="No Info">No Information</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Hypertension</label>
+                        <select name="hypertension" required>
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Heart Disease History</label>
+                        <select name="heart_disease" required>
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>BMI (Body Mass Index)</label>
+                        <input type="number" step="0.01" name="bmi" placeholder="e.g. 27.5" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>HbA1c Level</label>
+                        <input type="number" step="0.01" name="HbA1c_level" placeholder="e.g. 5.7" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Blood Glucose Level</label>
+                        <input type="number" step="1" name="blood_glucose_level" placeholder="e.g. 140" required>
+                    </div>
+
+                    <div class="full-width">
+                        <button type="submit" class="btn-submit">Run Prediction Analysis</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
