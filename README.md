@@ -1,8 +1,5 @@
 # ML-Diabetes-Detection-System
 End-to-end machine learning Flask web app for diabetes risk prediction using preprocessing pipelines, feature engineering, model comparison, threshold tuning, and XGBoost.
-# ML Diabetes Detection System
-
-A machine learning web application that predicts whether a person has a low or high risk of diabetes based on medical and lifestyle-related input features.
 
 The project uses a complete ML pipeline including preprocessing, feature engineering, outlier handling, model comparison, threshold tuning, and Flask-based web deployment.
 
