@@ -22,9 +22,9 @@ from xgboost import XGBClassifier
 from custom_transformers import OutlierHandler, FeatureEngineer
 
 
-# ==============================
+
 # LOAD DATA
-# ==============================
+
 df = pd.read_csv(config.DATA_PATH)
 df = df.drop_duplicates()
 df = df[df['gender'] != 'Other']
@@ -36,10 +36,8 @@ X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42, stratify=y
 )
 
-
-# ==============================
 # PREPROCESSOR
-# ==============================
+
 numeric_features = [
     'age', 'bmi', 'HbA1c_level',
     'blood_glucose_level', 'glucose_high_bp',
@@ -60,10 +58,8 @@ preprocessor = ColumnTransformer([
     ]), categorical_features)
 ])
 
-
-# ==============================
 # MODEL COMPARISON
-# ==============================
+
 models = {
     "RandomForest": RandomForestClassifier(random_state=42, class_weight='balanced'),
     "XGBoost": XGBClassifier(eval_metric='logloss')
@@ -96,9 +92,8 @@ for name, model in models.items():
 print("\nBest Model Selected")
 
 
-# ==============================
 # EVALUATION
-# ==============================
+
 y_pred = best_model.predict(X_test)
 y_proba = best_model.predict_proba(X_test)[:, 1]
 
@@ -109,18 +104,18 @@ print(classification_report(y_test, y_pred))
 cm = confusion_matrix(y_test, y_pred)
 
 
-# ==============================
+
 # THRESHOLD
-# ==============================
+
 for t in np.arange(0.1, 0.9, 0.1):
     preds = (y_proba > t).astype(int)
     recall = classification_report(y_test, preds, output_dict=True)['1']['recall']
     print(f"Threshold {t:.1f} → Recall: {recall:.4f}")
 
 
-# ==============================
+
 # DASHBOARD
-# ==============================
+
 fig, axes = plt.subplots(2, 2, figsize=(14, 10))
 
 sns.heatmap(cm, annot=True, fmt='d', ax=axes[0, 0])
@@ -144,9 +139,8 @@ plt.savefig("dashboard.png")
 plt.show()
 
 
-# ==============================
 # SHAP (100% SAFE)
-# ==============================
+
 try:
     X_processed = best_model[:-1].transform(X_test)
 
@@ -168,9 +162,8 @@ except Exception as e:
     print("SHAP skipped:", e)
 
 
-# ==============================
 # SAVE MODEL
-# ==============================
+
 with open(config.MODEL_PATH, "wb") as f:
     pickle.dump(best_model, f)
 
