@@ -11,8 +11,6 @@ This project follows a complete data science lifecycle: **EDA, preprocessing, fe
 
 ## 🚀 Live Demo
 
-## 🚀 Live Demo
-
 🔗 Live App: https://ml-diabetes-detection-system-2.onrender.com/
 
 > Note: This project is hosted on Render's free tier. The app may take 30–60 seconds to load if it has been inactive because the free instance goes to sleep. Please wait for the first request to wake the server.
