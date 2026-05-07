@@ -82,3 +82,10 @@ Missing Value Handling
 Scaling + Encoding
         ↓
 ML Model Prediction
+
+## Run with Docker
+
+Build the Docker image:
+
+```bash
+docker build -t diabetes-prediction-app .
