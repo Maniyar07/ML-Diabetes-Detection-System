@@ -1,91 +1,87 @@
-# ML-Diabetes-Detection-System
-End-to-end machine learning Flask web app for diabetes risk prediction using preprocessing pipelines, feature engineering, model comparison, threshold tuning, and XGBoost.
+# 🩺 ML Diabetes Risk Prediction System
 
-The project uses a complete ML pipeline including preprocessing, feature engineering, outlier handling, model comparison, threshold tuning, and Flask-based web deployment.
+An end-to-end Machine Learning web application that predicts whether a person has **Low Risk** or **High Risk** of diabetes based on clinical and lifestyle-related inputs.
+
+This project follows a complete data science lifecycle: **EDA, preprocessing, feature engineering, model training, model comparison, evaluation, deployment, and containerization using Docker**.
 
 ---
 
-## Project Overview
+## 🚀 Live Demo
 
-This project predicts diabetes risk using patient information such as:
+🔗 **Deployed App:**  
+`https://your-render-url.onrender.com`
+
+> Replace the above URL with your actual Render deployment link.
+
+---
+
+## 📌 Project Overview
+
+Diabetes is one of the most common chronic health conditions worldwide. Early risk prediction can help individuals take preventive action through lifestyle changes, medical consultation, and regular monitoring.
+
+This project uses machine learning to predict diabetes risk using patient data such as:
 
 - Gender
 - Age
 - Hypertension
-- Heart disease
+- Heart disease history
 - Smoking history
 - BMI
 - HbA1c level
 - Blood glucose level
 
-The system returns:
+The application provides:
 
-- Diabetes risk prediction
+- Risk prediction: **Low Risk / High Risk**
 - Confidence score
-- Clean web-based result page
+- Clean Flask-based web interface
+- Dockerized deployment support
+- Render cloud deployment support
 
 ---
 
-## Tech Stack
+## 🎯 Key Features
 
-### Machine Learning
-- Python
-- Pandas
-- NumPy
-- Scikit-learn
-- XGBoost
-- SHAP
-- Matplotlib
-- Seaborn
-
-### Web Development
-- Flask
-- HTML
-- CSS
-
-### Deployment
-- Render
-- Gunicorn
+- ✅ End-to-end Machine Learning pipeline
+- ✅ Custom preprocessing pipeline using Scikit-learn
+- ✅ IQR-based outlier handling
+- ✅ Feature engineering using custom transformer
+- ✅ OneHotEncoding for categorical features
+- ✅ StandardScaler for numerical features
+- ✅ RandomForest and XGBoost model comparison
+- ✅ ROC-AUC based model selection
+- ✅ Threshold tuning for recall optimization
+- ✅ Confidence score display
+- ✅ Flask web application
+- ✅ Render deployment
+- ✅ Docker containerization
+- ✅ Modular and production-style project structure
 
 ---
 
-## Features
-
-- End-to-end machine learning pipeline
-- Custom feature engineering
-- IQR-based outlier handling
-- StandardScaler for numerical features
-- OneHotEncoder for categorical features
-- RandomForest and XGBoost model comparison
-- ROC-AUC based model selection
-- Threshold tuning for better recall
-- Confidence score display
-- Flask web interface
-- Modular project structure
-- Production-ready deployment setup
-
----
-
-## Machine Learning Pipeline
-
-The pipeline follows this flow:
+## 🧠 Machine Learning Workflow
 
 ```text
-Raw Input Data
-        ↓
+Raw Dataset
+    ↓
+Data Cleaning
+    ↓
+Exploratory Data Analysis
+    ↓
 Outlier Handling
-        ↓
+    ↓
 Feature Engineering
-        ↓
-Missing Value Handling
-        ↓
-Scaling + Encoding
-        ↓
-ML Model Prediction
-
-## Run with Docker
-
-Build the Docker image:
-
-```bash
-docker build -t diabetes-prediction-app .
+    ↓
+Preprocessing Pipeline
+    ↓
+Model Training
+    ↓
+Model Comparison
+    ↓
+Evaluation
+    ↓
+Model Serialization
+    ↓
+Flask Deployment
+    ↓
+Docker Containerization
