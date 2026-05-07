@@ -7,6 +7,6 @@ MODEL_PATH = os.path.join(BASE_DIR, "best_model.pkl")
 
 DEBUG = False
 
-PORT = int(os.environ.get("PORT", 8000))
+PORT = int(os.environ.get("PORT", 10000))
 
 SHAP_SAMPLE_SIZE = 500

@@ -1,0 +1,14 @@
+.venv/
+venv/
+__pycache__/
+*.pyc
+.git/
+.idea/
+.vscode/
+*.log
+
+Visuals/
+dashboard.png
+shap.png
+shap_summary.png
+model_dashboard.png
