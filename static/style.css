@@ -7,6 +7,10 @@
     --bg-color: #F0F4F8;            /* The new Body Background */
     --text-main: #334E68;           /* Dark Blue-Gray (better than black) */
     --border-color: #D9E2EC;         /* Softer border */
+    --card-bg: #FFFFFF;
+    --text-muted: #66788A;
+    --success-color: #1E8E3E;
+    --danger-color: #D93025;
 }
 
 * {
@@ -23,7 +27,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding: 30 px;
+    padding: 30px;
 }
 
 /* --- Container & Cards --- */
@@ -187,4 +191,18 @@ body {
     .form-grid { grid-template-columns: 1fr; }
     .full-width { grid-column: span 1; }
     .card { padding: 25px; }
+}
+
+/* --- Render Free Tier Note --- */
+.cold-start-note {
+    margin-top: 12px;
+    padding: 10px 12px;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.5;
+    text-align: center;
+    color: var(--text-main);
+    background-color: var(--accent-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
 }
